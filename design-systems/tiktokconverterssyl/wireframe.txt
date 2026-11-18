@@ -1,0 +1,26 @@
+SOUSAYL (v2). Identidade: preto quente + cobre, Montserrat/Jost, cantos retos, rótulos mono.
+Efeitos e encadeamento de seções herdados do PROMETEUS; conteúdo é o do projeto (escolhas, canais, marcas).
+A v1 (verde-limão) está preservada em _v1-verde-limao/.
+
+TOPO (sticky)  SOUSAYL | Escolhas  Canais  Para marcas  FAQ | [ Divulgar marca ]
+
+00 ABERTURA    selo "Hub de boas escolhas"
+               SOUSAYL gigante, vazado em cobre, letra a letra sobe de uma máscara
+               linha "Escolhas, Canais, Para marcas"
+               banner largo, revelado por máscara dupla (janela sobe, imagem assenta)
+               fio que se traça + 3 legendas  [ Ver as escolhas -> ]
+01 VITRINE     galeria em cross-fade 6 s (Moletom / Manta / Básicos), barras de progresso,
+               faixa preta com nome + CTA branco retangular
+02 ÍNDICE      painel CLARO com respiro preto: "SOUSAYL(R) ... HUB", texto à esquerda,
+               foto 4:5 no meio, "Sobre" à direita
+03 DEGRAUS     fundo preto; 3 caixas brancas com numeral gigante subindo em degraus
+               (1 Escolhas, 2 Canais, 3 Para marcas), cada uma ancora na seção
+04 ESCOLHAS    2 faixas lado a lado até a borda (Peça da semana / Look do mês)
+05 CANAIS      7 cards promocionais (TikTok Shop, ML, Shopee, Instagram, Loja, WhatsApp, Telegram)
+06 MARCAS      4 planos em colunas separadas por fio (Free, Destaque, Pro, Premium)
+07 CONTATO     painel com 2 textos nos cantos, CTA no centro, "CONTATO" gigante cortado embaixo
+08 FAQ         título à esquerda, acordeão <details> à direita
+RODAPÉ         bloco cobre em largura total: CTA gigante "Ver as escolhas ->",
+               wordmark + 3 colunas, fio, linha legal
+
+Reveal ao rolar (.rv) em cada bloco; prefers-reduced-motion desliga tudo.

@@ -1,0 +1,233 @@
+/* HTML/CSS counterparts of assets_campanha/card_*.png.
+   Each anchor is its own sizing container; all interior measurements scale together. */
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.proposals .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 12px; }
+.promo {
+  --glow: #ff196c;
+  --font: "Figtree", Arial, sans-serif;
+  position: relative;
+  display: block;
+  grid-column: auto;
+  container-type: inline-size;
+  isolation: isolate;
+  aspect-ratio: 3 / 2;
+  min-width: 0;
+  color: white;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .2s ease;
+}
+.promo:hover { transform: translateY(-3px); }
+.promo:focus-visible { outline: 3px solid white; outline-offset: 8px; border-radius: 16px; }
+.promo > * { position: absolute; }
+.promo::before {
+  content: ""; position: absolute; inset: 8% 1%; z-index: -1;
+  background: var(--glow); opacity: .22; filter: blur(26px); border-radius: 30%;
+  pointer-events: none;
+}
+.promo-shape {
+  inset: 9cqw 1cqw 5cqw; z-index: 0; overflow: hidden;
+  border-radius: 8cqw;
+  box-shadow: inset 0 .3cqw .4cqw #ffffffb0, inset 0 -.4cqw .6cqw #00000045,
+    0 .7cqw .7cqw #0008, 0 0 2cqw var(--glow);
+}
+.promo-icone { z-index: 2; object-fit: contain; color: white; filter: drop-shadow(0 .5cqw .4cqw #0003); }
+.promo-roupas { z-index: 1; object-fit: contain; height: auto; pointer-events: none; filter: drop-shadow(0 1.2cqw 1cqw #0005); }
+.promo-title { z-index: 3; display: flex; flex-direction: column; pointer-events: none; }
+.promo-t1, .promo-t2 {
+  font-family: var(--font); font-weight: 800; line-height: .94; letter-spacing: -.04em;
+  text-shadow: 0 .25cqw 0 #ddd, 0 .7cqw .5cqw #0004;
+}
+.promo-sub { display: block; margin-top: 2cqw; font: 600 4cqw/1.2 "Poppins", Arial, sans-serif; letter-spacing: -.03em; }
+.promo-btn {
+  z-index: 4; display: flex; align-items: center; justify-content: center; gap: 2cqw;
+  height: 10cqw; padding: 0 2.8cqw; border-radius: 999px;
+  font: 900 4.8cqw/1 "Figtree", Arial, sans-serif;
+  letter-spacing: -.015em; white-space: nowrap; overflow: hidden;
+  border: .35cqw solid #ffffffc0;
+  box-shadow: inset 0 .4cqw .6cqw #fff9, inset 0 -.4cqw .6cqw #0002,
+    0 .5cqw 0 var(--button-edge, #0003), 0 1cqw 1.2cqw #0005;
+  transition: filter .18s ease, transform .18s ease;
+}
+.promo-btn > span:not(.ripple) { position: relative; z-index: 1; }
+.promo-btn .i { flex: 0 0 auto; width: 5.8cqw; height: 5.8cqw; fill: currentColor; }
+.promo:hover .promo-btn { filter: brightness(1.08); }
+.promo:active .promo-btn, .promo-btn.is-pressed { transform: translateY(.4cqw); }
+.promo-btn b { font-weight: inherit; }
+.promo-btn::after {
+  content: "";
+  position: absolute;
+  inset: -30% auto -30% -50%;
+  width: 35%;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, #ffffffa0, transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.promo .promo-btn:hover, .promo:focus-visible .promo-btn {
+  transform: translateY(-.45cqw) scale(1.035);
+  filter: brightness(1.12) drop-shadow(0 0 1.1cqw var(--glow));
+}
+.promo-btn:hover::after, .promo:focus-visible .promo-btn::after {
+  animation: promo-button-shine .85s ease-out both;
+}
+.promo-btn .i { transition: transform .22s ease; }
+.promo-btn:hover .i, .promo:focus-visible .promo-btn .i { transform: translateX(.45cqw); }
+.promo:active .promo-btn, .promo-btn.is-pressed { transform: translateY(.35cqw) scale(.98); }
+@keyframes promo-button-shine { from { left: -50%; } to { left: 130%; } }
+.promo-chip { display: grid; place-items: center; width: 7.8cqw; height: 7.8cqw; flex: none; border-radius: 50%; }
+.promo-chip .i { width: 4.2cqw; height: 4.2cqw; }
+.ripple { position: absolute; border-radius: 50%; background: #fff7; transform: scale(0); animation: promo-ripple .65s ease-out forwards; pointer-events: none; }
+@keyframes promo-ripple { to { transform: scale(1); opacity: 0; } }
+
+/* TikTok: cyan on the left, pink on the right; CTA sits below the products. */
+.promo-tiktok { --glow: #fa126a; }
+.promo-tiktok::before { background: linear-gradient(110deg, #00eff5, #ff0059); }
+.promo-tiktok .promo-shape {
+  inset: 7cqw 1cqw 5cqw; border-radius: 7cqw 7cqw 7cqw 5cqw;
+  border: .65cqw solid transparent;
+  background: radial-gradient(ellipse at 80% 25%, #401428, #07090b 70%) padding-box,
+    linear-gradient(130deg, #00f3f1 15%, #1b2936 46%, #ff0061 75%) border-box;
+  box-shadow: inset 0 0 0 .3cqw #08080c, inset 0 0 2cqw #ff006a50, 0 0 1.5cqw #ff006b;
+}
+.promo-tiktok .promo-icone { left: 4cqw; top: 6cqw; width: 38cqw; height: 31cqw; }
+.promo-tiktok .promo-title { left: 6cqw; top: 33cqw; }
+.promo-tiktok .promo-t1 { font-size: 10cqw; }
+.promo-tiktok .promo-t2 { font-size: 10cqw; align-self: center; }
+.promo-tiktok .promo-roupas { width: 57cqw; right: 1cqw; top: 0; }
+.promo-tiktok .promo-btn {
+  left: 38cqw; right: 5cqw; bottom: 10cqw; height: 10cqw; font-size: 4.6cqw;
+  background: linear-gradient(#ff1464, #ed0045); color: white;
+  border-color: #ffaac7; box-shadow: inset 0 .5cqw .5cqw #ff90bf, 0 0 0 .5cqw #ff0060, 0 0 2cqw #ff0060;
+}
+
+/* Mercado Livre: handshake and two-line wordmark, blue button across the base. */
+.promo-mercado { --glow: #145cff; --font: "Nunito", Arial, sans-serif; }
+.promo-mercado .promo-shape {
+  border: 1cqw solid #0834b9;
+  background: linear-gradient(150deg, #fff84c, #ffe700 55%, #ffc900);
+  box-shadow: inset 0 0 0 .5cqw #fff99a, inset 0 1cqw .8cqw #fff, inset 0 -1cqw 1cqw #df9e00, 0 0 1cqw #1b6dff;
+}
+.promo-mercado .promo-icone { width: 47cqw; height: 40cqw; left: -2cqw; top: 10cqw; }
+.promo-mercado .promo-title { left: 42cqw; top: 17cqw; }
+.promo-mercado .promo-t1, .promo-mercado .promo-t2 {
+  color: #052488; font-size: 11cqw; font-weight: 900;
+  -webkit-text-stroke: .7cqw white; paint-order: stroke fill;
+  text-shadow: 0 .7cqw .5cqw #0004;
+}
+.promo-mercado .promo-btn {
+  left: 7cqw; right: 7cqw; bottom: 10cqw; height: 13cqw;
+  background: linear-gradient(#0649de, #001b94); color: white;
+  border: .5cqw solid #7ed9ff; outline: .5cqw solid #e9bd00; font: 900 6.6cqw/1 "Nunito", Arial, sans-serif;
+  box-shadow: inset 0 .7cqw .7cqw #2b8fff, inset 0 -.7cqw .7cqw #001266, 0 .5cqw .6cqw #c98c00;
+}
+.promo-mercado .promo-btn b { color: #ffe500; }
+.promo-mercado .promo-btn .i { width: 7cqw; height: 7cqw; }
+.promo-parcel { z-index: 2; }
+.promo-mercado .promo-parcel {
+  width: 16cqw; height: 14cqw; top: 31cqw; right: 3cqw;
+  background: linear-gradient(105deg, #b6803e 0 17%, #dfb06f 18% 100%);
+  border: .15cqw solid #f9ddb2; border-radius: .4cqw;
+  transform: rotate(-6deg); box-shadow: .7cqw 1cqw 1cqw #4c370440;
+}
+.promo-mercado .promo-parcel::before { content: ""; position: absolute; width: 28%; height: 48%; top: 0; left: 43%; background: #194594; }
+.promo-mercado .promo-parcel img { position: absolute; width: 80%; left: 17%; bottom: -10%; }
+
+/* Shopee: large white bag on orange; clothing breaks the upper edge. */
+.promo-shopee { --glow: #ff5a00; --font: "Fredoka", Arial, sans-serif; }
+.promo-shopee .promo-shape {
+  border: .6cqw solid #ffbf70;
+  background: linear-gradient(135deg, #ff980b, #ff6014 45%, #ff390b);
+}
+.promo-shopee .promo-shape::before {
+  content: ""; position: absolute; inset: 15% -8% -65% 25%; border-radius: 50%;
+  border: 9cqw solid #ffb03e80; background: #fff6ec;
+}
+.promo-shopee .promo-icone { left: 14cqw; top: 11cqw; width: 23cqw; height: 22cqw; }
+.promo-shopee .promo-title { left: 5cqw; top: 35cqw; }
+.promo-shopee .promo-t1 { font-size: 12cqw; font-weight: 600; text-shadow: none; letter-spacing: -.02em; }
+.promo-shopee .promo-roupas { width: 56cqw; top: 0; right: 1cqw; transform: rotate(7deg); }
+.promo-shopee .promo-btn {
+  left: 10cqw; right: 6cqw; bottom: 7cqw; height: 12.5cqw; font-size: 6.2cqw;
+  color: #f9440c; background: linear-gradient(white, #fff4ed);
+  border: .5cqw solid #ffd9ab; outline: .5cqw solid #ff840e;
+}
+.promo-shopee .promo-btn .i { width: 7cqw; height: 7cqw; }
+
+/* Instagram: white camera, script wordmark, folded clothing on the right. */
+.promo-instagram { --glow: #ff2380; }
+.promo-instagram .promo-shape {
+  background: radial-gradient(ellipse at 20% 0%, #9200ff, transparent 53%), linear-gradient(125deg, #f900b5 10%, #ff006b 45%, #ff7900 80%, #ffd535);
+  border: .35cqw solid #ffbbec;
+  box-shadow: inset 0 .4cqw .8cqw #fff8, 0 0 1.5cqw #ff007b;
+}
+.promo-instagram .promo-icone { left: 14cqw; top: 13cqw; width: 25cqw; height: 25cqw; filter: drop-shadow(0 .7cqw .4cqw #b02a4550); }
+.promo-instagram .promo-title { left: 4cqw; top: 36cqw; }
+.promo-instagram .promo-t1 { font: 400 14cqw/.95 "Yellowtail", cursive; letter-spacing: -.04em; text-shadow: 0 .4cqw .5cqw #97002b60; }
+.promo-instagram .promo-roupas { width: 55cqw; right: 0; top: 4cqw; transform: rotate(8deg); }
+.promo-instagram .promo-btn {
+  left: 8cqw; bottom: 9cqw; width: 49cqw; height: 9cqw; font-size: 4cqw;
+  background: linear-gradient(#fff, #fff4eb); color: #db007f; border: .45cqw solid #ffc877;
+  box-shadow: 0 0 0 .35cqw #d70b9d, inset 0 .4cqw .5cqw white, 0 .6cqw .6cqw #ba1469;
+}
+.promo-instagram .promo-btn > span { background: linear-gradient(90deg, #a900d5, #ff4c00); background-clip: text; -webkit-background-clip: text; color: transparent; }
+.promo-instagram .promo-btn .i { width: 4.5cqw; height: 4.5cqw; }
+
+/* Loja online: italic typography, orbit, hoodie and parcel. */
+.promo-loja { --glow: #c4ff00; --font: "Montserrat", Arial, sans-serif; }
+.promo-loja .promo-shape { border: .5cqw solid #d2ff00; background: radial-gradient(ellipse at 80% 40%, #303900, #080c08 65%); }
+.promo-loja .promo-shape::before {
+  content: ""; position: absolute; width: 120%; height: 55%; left: -15%; top: 12%;
+  border: 1cqw solid #d4ff00; border-radius: 50%; transform: rotate(-20deg);
+}
+.promo-loja .promo-title { left: 5cqw; top: 15cqw; }
+.promo-loja .promo-t1, .promo-loja .promo-t2 { font-size: 16cqw; font-style: italic; font-weight: 900; letter-spacing: -.055em; }
+.promo-loja .promo-t2 { color: #d8ff00; text-shadow: 0 .5cqw .5cqw #0005; }
+.promo-loja .promo-roupas { width: 55cqw; top: 0; right: 2cqw; transform: rotate(8deg); }
+.promo-loja .promo-btn { left: 5cqw; bottom: 10cqw; width: 49cqw; height: 10cqw; background: linear-gradient(#e6ff44, #cfff00); color: #080b00; border-color: #d9ff27; font-size: 4.3cqw; padding-right: 1cqw; }
+.promo-loja .promo-chip { color: #d4ff00; background: #080b00; margin-left: auto; }
+.promo-loja .promo-parcel { right: 4cqw; bottom: 6cqw; width: 24cqw; height: 19cqw; transform: skewY(-5deg); background: linear-gradient(100deg, #20231d, #080a08); border: .2cqw solid #7a8062; box-shadow: 1cqw .8cqw 1cqw #0007; }
+.promo-loja .promo-parcel::before { content: ""; position: absolute; top: 0; right: 25%; width: 17%; height: 30%; background: #ceff00; }
+.promo-loja .promo-parcel .i { position: absolute; width: 10cqw; height: 8cqw; bottom: 2cqw; left: 3cqw; color: #d4ff00; }
+.promo-spark { z-index: 3; right: 6cqw; top: 20cqw; width: 4cqw; height: 6cqw; background: #d4ff00; clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%); }
+
+/* WhatsApp: large left emblem, title above the CTA, small product accent. */
+.promo-whatsapp { --glow: #00ec53; --font: "Lato", Arial, sans-serif; }
+.promo-whatsapp .promo-shape { inset: 12cqw 1cqw 12cqw; border-radius: 8cqw; border: .5cqw solid #39ee78; background: radial-gradient(ellipse at 25% 15%, #00db40, #008827 55%, #004e21); }
+.promo-whatsapp .promo-icone { left: 4cqw; top: 19cqw; width: 28cqw; height: 28cqw; }
+.promo-whatsapp .promo-title { left: 36cqw; top: 15cqw; }
+.promo-whatsapp .promo-t1 { font-size: 9cqw; font-weight: 900; }
+.promo-whatsapp .promo-t2 { font-size: 8.8cqw; font-weight: 900; color: #a3ff92; }
+.promo-whatsapp .promo-sub { font-size: 3.6cqw; margin-top: 1.6cqw; }
+.promo-whatsapp .promo-roupas { right: -1cqw; top: 25cqw; width: 21cqw; }
+.promo-whatsapp .promo-btn { left: 29cqw; right: 15cqw; bottom: 16cqw; height: 8cqw; background: linear-gradient(white, #e4eeea); color: #006723; font: 900 3.9cqw/1 "Lato", Arial, sans-serif; }
+.promo-whatsapp .promo-btn .i { width: 5cqw; height: 5cqw; }
+
+/* Telegram: wide blue plaque and protruding circular emblem, as in its reference. */
+.promo-telegram { --glow: #00a9ff; aspect-ratio: 12 / 5; }
+.promo-telegram .promo-shape { inset: 6cqw 1cqw 5cqw 16cqw; border-radius: 6cqw; border: .6cqw solid white; background: linear-gradient(135deg, #15c4ff, #0083ee 45%, #0460d6); }
+.promo-emblem {
+  z-index: 3; left: 2cqw; top: 3cqw; width: 33cqw; height: 33cqw; border-radius: 50%;
+  display: grid; place-items: center; border: 1.4cqw solid #f4fcff;
+  background: linear-gradient(140deg, #89e5ff, #00aeff 60%, #0372dd);
+  box-shadow: 0 0 0 .55cqw #29baff, 0 1cqw 0 #0064a8, inset 0 0 0 .5cqw #98e5ff, 1cqw 1cqw 1.4cqw #004da180;
+}
+.promo-emblem .i { width: 23cqw; height: 23cqw; fill: white; filter: drop-shadow(0 1cqw .7cqw #0067b060); }
+.promo-telegram .promo-title { left: 38cqw; top: 10cqw; display: block; }
+.promo-telegram .promo-t1, .promo-telegram .promo-t2 { display: inline; font-size: 6cqw; }
+.promo-telegram .promo-t2 { color: #9feaff; margin-left: 1.2cqw; }
+.promo-telegram .promo-sub { font-size: 3.4cqw; margin-top: 1.4cqw; font-weight: 400; }
+.promo-telegram .promo-btn { left: 37cqw; right: 5cqw; bottom: 8cqw; height: 8cqw; background: linear-gradient(white, #deedff); color: #0068f2; border: .4cqw solid #88d8ff; font-size: 4cqw; }
+.promo-telegram .promo-btn .i { width: 5.3cqw; height: 5.3cqw; }
+
+@media (min-width: 720px) {
+  .proposals .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
+  .promo-telegram { grid-column: 1 / -1; width: 85%; justify-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .promo, .promo-btn, .promo-btn .i { transition: none; }
+  .promo .promo-btn:hover, .promo:focus-visible .promo-btn,
+  .promo-btn:hover .i, .promo:focus-visible .promo-btn .i { transform: none; }
+  .promo-btn::after { animation: none !important; }
+  .ripple { display: none; }
+}
