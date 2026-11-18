@@ -1,7 +1,7 @@
 /* HTML/CSS counterparts of assets_campanha/card_*.png.
    Each anchor is its own sizing container; all interior measurements scale together. */
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-.proposals .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 12px; }
+.proposals .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; padding-top: 12px; }
 .promo {
   --glow: #ff196c;
   --font: "Figtree", Arial, sans-serif;
@@ -220,9 +220,10 @@
 .promo-telegram .promo-btn { left: 37cqw; right: 5cqw; bottom: 8cqw; height: 8cqw; background: linear-gradient(white, #deedff); color: #0068f2; border: .4cqw solid #88d8ff; font-size: 4cqw; }
 .promo-telegram .promo-btn .i { width: 5.3cqw; height: 5.3cqw; }
 
+.promo-telegram { grid-column: 1 / -1; width: 100%; justify-self: center; }
 @media (min-width: 720px) {
-  .proposals .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
-  .promo-telegram { grid-column: 1 / -1; width: 85%; justify-self: center; }
+  .proposals .grid { gap: 28px 36px; }
+  .promo-telegram { width: 85%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .promo, .promo-btn, .promo-btn .i { transition: none; }

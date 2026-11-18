@@ -10,7 +10,7 @@ export default function Header() {
         <a href="#canais">Canais</a>
         <a href="#marcas">Para marcas</a>
         <a href="#escolhas">Escolhas</a>
-        <a href="#propostas">Propostas</a>
+        <a href="#propostas">Canais</a>
       </nav>
       <a className="pill" href="#contato">Divulgar marca</a>
     </header>

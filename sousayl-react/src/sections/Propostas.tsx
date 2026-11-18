@@ -7,7 +7,7 @@ export default function Propostas() {
     <section id="propostas" className="scene proposals">
       <Reveal tilt={12} blur={8}>
         <p className="eyebrow">— CANAIS</p>
-        <h2 className="titulo">PROPOSTAS DE DISTRIBUIÇÃO</h2>
+        <h2 className="titulo">ONDE A SUA MARCA APARECE</h2>
         <p className="caption propostas-lead">
           Escolha onde a sua marca aparece. Você continua vendendo na própria loja ou no TikTok Shop; a gente leva a
           audiência até lá.
